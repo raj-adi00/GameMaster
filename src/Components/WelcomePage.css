@@ -1,0 +1,22 @@
+@keyframes floating {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    25%{
+      transform: translateY(-10px) rotate(2deg);
+    }
+    50% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    75%{
+      transform: translateY(-10px) rotate(-2deg);
+    }
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+  }
+  
+  .animate-floating {
+    animation: floating 5s ease-in-out infinite;
+  }
+  

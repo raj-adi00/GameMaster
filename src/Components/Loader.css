@@ -1,0 +1,47 @@
+/* spinner.css */
+@keyframes up {
+    0%, 100% {
+      transform: none;
+    }
+    25% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(-100%) translateY(-100%);
+    }
+    75% {
+      transform: translateY(-100%);
+    }
+  }
+  
+  @keyframes down {
+    0%, 100% {
+      transform: none;
+    }
+    25% {
+      transform: translateX(100%);
+    }
+    50% {
+      transform: translateX(100%) translateY(100%);
+    }
+    75% {
+      transform: translateY(100%);
+    }
+  }
+  
+  .duration-2400 {
+    animation-duration: 2.4s;
+  }
+  
+  .animate-up {
+    animation-name: up;
+    animation-timing-function: cubic-bezier(0, 0, 0.24, 1.21);
+    animation-iteration-count: infinite;
+  }
+  
+  .animate-down {
+    animation-name: down;
+    animation-timing-function: cubic-bezier(0, 0, 0.24, 1.21);
+    animation-iteration-count: infinite;
+  }
+  
