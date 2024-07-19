@@ -1,48 +1,8 @@
-// import React, { useEffect, useState } from 'react'
-// import service from '../Appwrite/service'
-// import Cards from './Cards';
-// import Loader from './Loader';
-// import { Flag } from 'appwrite';
-// import Header from './Header'
-
-// function LeaderBoard() {
-//   const [userdata, setuserdata] = useState();
-//   const [loading, setloading] = useState(false);
-//   // useEffect(() => {
-//   //   service.getProfiles()
-//   //     .then((x) => {
-//   //       console.log(x);
-//   //       setuserdata(x);
-//   //       setloading(false)
-//   //     })
-//   //     .catch((err) => {
-//   //       console.log(err)
-//   //       setloading(false)
-//   //     })
-//   // }, [])
-//   if (loading)
-//     return (<div className='w-screen h-screen flex items-center justify-center'>
-//       <Loader />
-//     </div>)
-//   else
-//     return (
-//       <div className='bg-gradient-to-r from-blue-500 to-purple-600 min-w-screen min-h-screen'>
-//         <Header />
-//           <h3 className='text-2xl font-bold text-center p-2 text-white '>Leaderboard</h3>
-//         {
-//           userdata && userdata.documents.map((val) => <Cards props={val} key={val.userid}/>)
-//         }
-//       </div>
-//     )
-// }
-
-// export default LeaderBoard
 import React, { useEffect, useState } from 'react';
 import service from '../Appwrite/service';
 import Cards from './Cards';
 import Loader from './Loader';
 import Header from './Header';
-import './LeaderBoard.css';
 
 function LeaderBoard() {
   const [userdata, setuserdata] = useState();

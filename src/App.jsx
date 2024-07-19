@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router'
 import Loader from './Components/Loader'
 import { userenter } from './store/authslice'
 function App() {
-  const [loading, setloading] = useState(false)
+  const [loading, setloading] = useState(true)
   const dispatch = useDispatch();
   const navigate = useNavigate()
   useEffect(() => {
@@ -33,7 +33,9 @@ function App() {
   }, [])
   if (loading)
     return (
-      <Loader />)
+      <div className='w-screen h-screen flex items-center justify-center'>
+      <Loader />
+    </div>)
   else
     return (
       <div>
