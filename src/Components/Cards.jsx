@@ -1,11 +1,10 @@
 import React from 'react';
 
-function Cards({...props}) {
-     
+function Cards({ ...props }) {
   return (
-    <div className="w-screen p-4">
-      <div className="bg-white shadow-lg rounded-lg p-1 mb-2 transform transition-transform duration-300 hover:scale-105">
-        <div className="flex flex-col sm:flex-row items-center justify-between text-lg text-black">
+    <div className="w-screen p-2">
+      <div className="bg-gray-100 shadow-md rounded-lg p-2 pr-5 mb-2 transform transition-transform duration-300 hover:cursor-pointer mr-4">
+        <div className="flex flex-col sm:flex-row items-center justify-between text-lg text-gray-800">
           <div className="flex items-center mb-2 sm:mb-0">
             <span className="ml-2">{props.userid}</span>
           </div>
