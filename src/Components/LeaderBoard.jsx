@@ -13,7 +13,7 @@ function LeaderBoard() {
     setloading(true);
     service.getProfiles()
       .then((x) => {
-        console.log(x);
+        // console.log(x);
         setuserdata(x);
         setloading(false);
       })

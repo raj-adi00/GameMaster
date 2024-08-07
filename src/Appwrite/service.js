@@ -57,10 +57,12 @@ class Service {
 
     async getProfile(userid) {
         try {
-            return await this.databases.getDocument(
+            return await this.databases.listDocuments(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId,
-                userid
+                [
+                    Query.equal("email", userid)
+                ]
             )
         } catch (err) {
             console.log("error at getProfile", err);
@@ -119,7 +121,8 @@ class Service {
     }
 
     getfilePreview(imageid) {
-        const link = this.bucket.getfilePreview(
+        console.log(imageid)
+        const link = this.bucket.getFilePreview(
             conf.appwriteBucketId,
             imageid
         )

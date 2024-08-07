@@ -30,6 +30,7 @@ export class Authentication {
             // console.log(email)
             // console.log(conf.appwriteURL)
             console.log("error at login", error);
+            return error
         }
     }
 

@@ -9,6 +9,7 @@ import Services from './Components/Services.jsx'
 import { Provider } from 'react-redux'
 import store from './store/store.js'
 import LeaderBoard from './Components/LeaderBoard.jsx'
+import User from './Components/User.jsx'
 // console.log(store)
 const router = createBrowserRouter([
   {
@@ -29,6 +30,9 @@ const router = createBrowserRouter([
       },{
         path:"/leaderboard",
         element:(<LeaderBoard />)
+      },{
+        path:"/user/:id",
+        element:(<User/>)
       }
     ]
   }
