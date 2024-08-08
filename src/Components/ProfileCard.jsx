@@ -80,7 +80,7 @@ const ProfileCard = () => {
             <div className="text-center">
               <div className="relative rounded-full overflow-hidden w-1/2 mx-auto mb-4">
                 <img
-                  className="h-full w-full object-contain rounded-full bg-gray-600"
+                  className="h-full w-full max-h-44 max-w-44 object-contain rounded-full bg-gray-600"
                   src={profileImage}
                   alt="Profile"
                 />
