@@ -1,70 +1,4 @@
-// import React, { useState } from 'react'
-// import { useForm } from 'react-hook-form'
-// import { Input, Loader } from '../index'
-// import authentication from '../Appwrite/auth'
-// import { useDispatch } from 'react-redux'
-// import { userenter } from '../store/authslice'
-// import { useNavigate } from 'react-router-dom'
 
-// function Login() {
-//     const [loading, setloading] = useState(false)
-//     const dispatch = useDispatch()
-//     const { register, handleSubmit } = useForm();
-//     const [error, seterror] = useState("");
-//     const navigate = useNavigate()
-
-//     const login = async (data) => {
-//         seterror("");
-//         try {
-//             setloading(true)
-//             const session = await authentication.login(data)
-//             if (session) {
-//                 const userData = await authentication.getCurrentUser()
-//                 if (userData) {
-//                     dispatch(userenter(userData))
-//                     navigate('/home')
-//                 }
-//             }
-//             setloading(false)
-//         } catch (err) {
-//             console.log(err);
-//             seterror(err);
-//             setloading(false);
-//         }
-//     }
-//     if (loading)
-//         return (<Loader />)
-//     else
-//         return (
-//             <div className="bg-gray-700 bg-opacity-50 p-10 rounded-lg">
-//                 <form onSubmit={handleSubmit(login)} className='w-full'>
-//                     <Input
-//                         label="Email:"
-//                         placeholder="Enter ur email"
-//                         type="email"
-//                         {...register("email", {
-//                             required: true,
-//                         })}
-//                     />
-//                     <Input
-//                         label="Password"
-//                         type="password"
-//                         placeholder="Enter your password"
-//                         {...register("password", {
-//                             required: true
-//                         })} />
-//                     <button type='submit' className='w-full'>Login</button>
-//                 </form>
-//                 <p>
-//                     {
-//                         error && <p className="text-red-600 mt-8 text-center">{error} </p>
-//                     }
-//                 </p>
-//             </div>
-//         )
-// }
-
-// export default Login
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Input, Loader, service } from '../index';
@@ -82,8 +16,8 @@ function Login() {
     const navigate = useNavigate();
 
     const login = async (data) => {
-        seterror("");
         try {
+            seterror("");
             setloading(true);
             const session = await authentication.login(data);
             if (session) {
@@ -98,7 +32,7 @@ function Login() {
             setloading(false);
         } catch (err) {
             console.log(err);
-            seterror(err.message);
+            seterror(err?.message || "Something went wrong. Please Retry");
             setloading(false);
         }
     };
@@ -136,7 +70,7 @@ function Login() {
                                 Login
                             </button>
                         </form>
-                        {/* {error && <p className="text-red-600 mt-8 text-center">{error}</p>} */}
+                        {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
                     </div>
                 </div>
             </div>

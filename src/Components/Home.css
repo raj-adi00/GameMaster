@@ -2,9 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 2rem;  
   }
-  
+  body {
+    font-family: 'Kodchasan',cursive;
+}
   .flip-card {
     width: 100px;
     height: 150px;

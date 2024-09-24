@@ -41,7 +41,7 @@ function Register() {
       setLoading(false);
     } catch (err) {
       console.log(err);
-      seterror(err.message);
+      seterror(err?.message || "Something went wrong. Please Retry");
       setLoading(false);
     }
   }
@@ -99,7 +99,7 @@ function Register() {
               Create Account
             </button>
           </form>
-          {/* {error && <p className="text-red-600 mt-8 text-center">{error}</p>} */}
+          {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
         </div>
       </div>
     </div>
